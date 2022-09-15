@@ -53,9 +53,10 @@ img {
 .section {
   padding: 94px 0px;
 }
-
+/* ==================================== */
 /* --------------Header---------------- */
-.head-border {
+/* ==================================== */
+.header {
   border-bottom: 1px solid #ececec;
 }
 
@@ -64,14 +65,9 @@ img {
   align-items: center;
 }
 
-/* logo */
+/* --------------logo------------------ */
 .logo {
-  margin-right: 93px;
-}
-
-.logo,
-.logo-part {
-  color: black;
+  color: var(--hover-color);
   font-family: 'Raleway';
   font-weight: 700;
   font-size: 26px;
@@ -80,30 +76,30 @@ img {
   text-decoration: none;
 }
 
-.logo-foot {
+.logo__head {
+  color: #000000;
+}
+
+.logo__foot {
   color: #ffffff;
-  font-family: 'Raleway';
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: 0.03em;
-  text-decoration: none;
 }
 
-.logo-part {
-  color: #2196f3;
-}
-
-/* Navigation */
-.navigation-list {
+/* -------------Navigation-------------- */
+.navigation__list {
   display: flex;
+  margin-left: 93px;
 }
 
-.navigation-li + .navigation-li {
+.navigation__list :hover,
+.navigation__list :focus {
+  color: var(--hover-color);
+}
+
+.navigation__point + .navigation__point {
   margin-left: 50px;
 }
 
-.navigation-bar {
+.navigation__link {
   position: relative;
   text-decoration: none;
   color: var(--main-text-color);
@@ -118,17 +114,12 @@ img {
   transition: color var(--anim), background-color var(--anim);
 }
 
-.navigation-bar.condition {
+.navigation__link.condition {
   color: var(--hover-color);
 }
 
-.navigation-list :hover,
-.navigation-list :focus {
-  color: var(--hover-color);
-}
-
-.navigation-bar.condition::after,
-.navigation-bar:hover::after {
+.navigation__link.condition::after,
+.navigation__link:hover::after {
   content: '';
 
   position: absolute;
@@ -143,16 +134,12 @@ img {
   color: var(--hover-color);
 }
 
-/* Contacts */
+/* --------------Contacts--------------- */
 .contacts {
   margin-left: auto;
 }
 
-.contacts-head:hover,
-.contacts-head:focus {
-  color: var(--hover-color);
-}
-.contacts-head {
+.contacts__head {
   text-decoration: none;
   color: var(--sub-text-color);
   font-weight: 500;
@@ -167,36 +154,43 @@ img {
   justify-content: center;
   transition: color var(--anim);
 }
-.contacts-head + .contacts-head {
+
+.contacts__head + .contacts__head {
   margin-left: 50px;
 }
 
-.icon-header {
+.contacts__head:hover,
+.contacts__head:focus {
+  color: var(--hover-color);
+}
+
+.contacts__icons {
   margin-right: 10px;
   fill: currentColor;
 }
 
+/* ==================================== */
 /* --------------Page 1---------------- */
+/* ==================================== */
 
-/* hero */
+/* ---------------Hero----------------- */
 .hero {
   max-width: 1600px;
   margin: 0 auto;
   background-color: #2f303a;
   padding: 200px 0px;
-
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url('../images/herobg.jpg');
   background-size: cover;
 }
 
-.hero-content {
+.hero__content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.hero h1 {
+.hero__name {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -208,7 +202,7 @@ img {
   margin-bottom: 30px;
 }
 
-.order-btn {
+.hero__btn {
   background-color: var(--hover-color);
   font-family: inherit;
   font-weight: 700;
@@ -217,51 +211,33 @@ img {
   letter-spacing: 0.06em;
   color: #ffffff;
   cursor: pointer;
-
   padding: 10px 32px;
   margin: 0 auto;
-
   border: 0px solid transparent;
   border-radius: 4px;
   transition: background-color var(--anim);
 }
 
-.order-btn:hover,
-.order-btn:focus {
+.hero__btn:hover,
+.hero__btn:focus {
   background-color: #188ce8;
   transition: var(--anim);
 }
 
-/* our benefits */
-.benefits h3 {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-
-  margin-bottom: 10px;
-}
-
-.benefits p {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: var(--sub-text-color);
-}
-
-.benefits-list {
-  display: flex;
-}
-
-.benefits-point {
+/* -----------Our benefits------------- */
+.benefits__point {
   width: 270px;
 }
-.benefits-point + .benefits-point {
+
+.benefits__point + .benefits__point {
   margin-left: 30px;
 }
 
-.icon-benefits {
+.benefits__list {
+  display: flex;
+}
+
+.benefits__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,18 +248,29 @@ img {
   background-color: #f5f4fa;
 }
 
-/* what we do */
-.whatwedo-list {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
+.benefits__name {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
 }
 
+.benefits__text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--sub-text-color);
+}
+
+/* --------------what we do------------- */
 .whatwedo {
   padding-top: 0px;
 }
 
-.whatwedo-head {
+.whatwedo__name {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -291,11 +278,17 @@ img {
   letter-spacing: 0.03em;
 }
 
-.whatwedo-point {
+.whatwedo__list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.whatwedo__point {
   position: relative;
 }
 
-.whatwedo-upper {
+.whatwedo__upper {
   position: absolute;
   bottom: 0px;
   display: flex;
@@ -306,9 +299,7 @@ img {
   height: 70px;
 }
 
-.whatwedo-upper-text {
-  /* padding: 27px 107px; */
-
+.whatwedo__text {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
@@ -317,20 +308,19 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-
   color: #ffffff;
 }
 
-/* team */
+/* ----------------team----------------- */
 .team {
   background-color: #f5f4fa;
 }
 
-.team-list {
+.team__list {
   display: flex;
   justify-content: space-between;
 }
-.team-head {
+.team__head {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -339,7 +329,7 @@ img {
   margin-bottom: 50px;
 }
 
-.team-name {
+.team__name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
@@ -347,14 +337,14 @@ img {
   margin-bottom: 10px;
 }
 
-.team-prof {
+.team__prof {
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
   color: var(--sub-text-color);
 }
 
-.team-point {
+.team__point {
   text-align: center;
   background-color: #ffffff;
 
@@ -363,18 +353,19 @@ img {
   border-radius: 0px 0px 4px 4px;
 }
 
-.team-wrap {
+.team__wrap {
   padding: 30px 10px;
 }
 
-.icon-list {
+/* -----------social icons----------- */
+.icon__list {
   display: flex;
   gap: 10px;
   justify-content: center;
   margin-top: 16px;
 }
 
-.icon-social {
+.icon__social {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -386,18 +377,18 @@ img {
   transition: background-color var(--anim), color var(--anim);
 }
 
-.icon-social:hover,
-.icon-social:focus {
+.icon__social:hover,
+.icon__social:focus {
   background-color: var(--hover-color);
   color: #ffffff;
 }
 
-.icon-svg {
+.icon__svg {
   fill: currentColor;
 }
 
-/* clients */
-.clients {
+/* --------------clients-------------- */
+.clients__head {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -406,14 +397,14 @@ img {
   margin-bottom: 50px;
 }
 
-.clients-list {
+.clients__list {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 
-.clients-point {
+.clients__point {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,25 +415,28 @@ img {
   transition: border-color var(--anim);
 }
 
-.clients-point:hover,
-.clients-point:focus {
+.clients__point:hover,
+.clients__point:focus {
   border-color: var(--hover-color);
 }
 
-.clients-icons {
-  fill: #afb1b8;
-  transition: fill var(--anim);
-}
-.clients-point:hover .clients-icons,
-.clients-icons:focus {
+.clients__point:hover .clients-icons,
+.clients__icons:focus {
   fill: var(--hover-color);
 }
 
-.clients-icons:hover,
-.clients-icons:focus {
+.clients__icons {
+  fill: #afb1b8;
+  transition: fill var(--anim);
+}
+
+.clients__icons:hover,
+.clients__icons:focus {
   fill: var(--hover-color);
 }
+/* ==================================== */
 /* --------------Page 2---------------- */
+/* ==================================== */
 
 /* Filter */
 .filter {
@@ -560,20 +554,24 @@ img {
   padding-bottom: 60px;
 }
 
-.contacts-center {
-  text-decoration: none;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
-  background-color: #2f303a;
-  transition: color var(--anim);
+.foot__container {
+  display: flex;
+  align-items: baseline;
 }
 
-.contacts-addrs {
+.foot__addrs {
+  margin-right: 90px;
+}
+
+.foot__contacts {
+  margin-top: 20px;
+}
+
+.foot__wrap + .foot__wrap {
+  margin-top: 9px;
+}
+
+.foot__location {
   text-decoration: none;
   font-family: 'Roboto';
   font-style: normal;
@@ -586,34 +584,30 @@ img {
   transition: color var(--anim);
 }
 
-.contacts-addrs:hover,
-.contacts-addrs:focus {
+.foot__location:hover,
+.foot__location:focus {
   color: var(--hover-color);
 }
 
-.contacts-center:hover,
-.contacts-center:focus {
+.foot__contacts {
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #2f303a;
+  transition: color var(--anim);
+}
+
+.foot__contacts:hover,
+.foot__contacts:focus {
   color: var(--hover-color);
 }
 
-.contact-foot {
-  margin-top: 20px;
-}
-
-.addres-footer {
-  margin-right: 90px;
-}
-
-.addrs-wrap + .addrs-wrap {
-  margin-top: 9px;
-}
-
-.foot-div {
-  display: flex;
-  align-items: baseline;
-}
-
-/*=========Icon list=========*/
+/* ------------- Foot Icon -------------- */
 .foot-icon {
   margin-right: 93px;
 }
@@ -652,7 +646,7 @@ img {
   color: #ffffff;
 }
 
-/* ========Input Send========= */
+/* ------------Input Send------------- */
 .send-form {
   display: flex;
   align-items: flex-end;
@@ -720,10 +714,10 @@ img {
   top: 13px;
   right: 28px;
 }
-/* ---------------------
-BACKDROP + MODAL
-----------------------*/
 
+/* =============================================== */
+/* ---------------BACKDROP + MODAL-----------------*/
+/* =============================================== */
 .backdrop {
   position: fixed;
   top: 0;
