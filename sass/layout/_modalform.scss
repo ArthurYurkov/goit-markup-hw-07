@@ -39,16 +39,15 @@
     &:focus {
         border-color: var(--hover-color);
     }
-    &:focus {
-        fill: var(--hover-color);
-    }
 }
-
 .input__icon {
     position: absolute;
     bottom: 11px;
     left: 12px;
     transition: fill var(--anim);
+    .input__size:focus + & {
+        fill: var(--hover-color);
+    }
 }
 
 .input__textarea-size {

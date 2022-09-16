@@ -946,9 +946,6 @@ body {
 .input__size:focus {
   border-color: var(--hover-color);
 }
-.input__size:focus {
-  fill: var(--hover-color);
-}
 
 .input__icon {
   position: absolute;
@@ -956,6 +953,9 @@ body {
   left: 12px;
   -webkit-transition: fill var(--anim);
   transition: fill var(--anim);
+}
+.input__size:focus + .input__icon {
+  fill: var(--hover-color);
 }
 
 .input__textarea-size {
